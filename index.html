@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teknisk hjälp online – husvagn, 12V & smarta hem | Tekniklotsen</title>
+<meta name="description" content="Felsökning och teknisk support på distans för husvagn, 12V-system och smarta hem. Beskriv problemet – vi guidar dig steg för steg till lösningen. Fast pris, snabb respons.">
+<meta name="keywords" content="teknisk hjälp online, husvagn elektriskt fel, 12V felsökning, husvagn ström problem, batteri husvagn, smart hem support, elektriker online, felsökning distans, teknisk support Sverige, husvagn kylen fungerar inte, säkringar husvagn">
+<meta name="author" content="Tekniklotsen">
+<link rel="canonical" href="https://tekniklots.se/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Teknisk hjälp online – husvagn, 12V & smarta hem | Tekniklotsen">
+<meta property="og:description" content="Beskriv ditt problem – vi guidar dig steg för steg till lösningen. Felsökning på distans för husvagn, 12V och smarta hem. Fast pris, ingen verkstad.">
+<meta property="og:url" content="https://tekniklots.se/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sv_SE">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Teknisk hjälp online – husvagn, 12V & smarta hem | Tekniklotsen">
+<meta name="twitter:description" content="Felsökning på distans. Beskriv problemet – vi guidar dig till lösningen. Fast pris, snabb respons.">
+
+<!-- Schema JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Tekniklotsen",
+  "url": "https://tekniklots.se",
+  "email": "info@tekniklots.se",
+  "description": "Teknisk felsökning och support på distans för husvagn, 12V-system, smarta hem och mer. Vi guidar dig steg för steg till lösningen utan att du behöver åka till en verkstad.",
+  "areaServed": {"@type": "Country", "name": "Sverige"},
+  "serviceType": ["Teknisk felsökning online", "Husvagn elektrisk support", "12V system felsökning", "Smart hem support"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Tjänster",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Husvagnsel – elektriska fel och felsökning"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "12V & Batteri – laddning och systemfel"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Smarta hem – WiFi, routrar och automation"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Felsökning & diagnos – vet inte vad felet är"}}
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "SEK",
+    "availability": "https://schema.org/InStock",
+    "description": "Fast pris per ärende"
+  }
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --navy-light: #243660;
+    --amber: #E8A838;
+    --amber-dark: #C98E20;
+    --white: #FFFFFF;
+    --gray-100: #F5F6F8;
+    --gray-200: #E8EAF0;
+    --gray-500: #8A93A8;
+    --text: #1B2A4A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--navy);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+  }
+  .logo { font-family: 'DM Serif Display', serif; color: var(--white); font-size: 1.3rem; letter-spacing: 0.5px; }
+  .logo span { color: var(--amber); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--amber); }
+  .nav-cta { background: var(--amber); color: var(--navy) !important; padding: 8px 20px; border-radius: 6px; font-weight: 600 !important; transition: background 0.2s !important; }
+  .nav-cta:hover { background: var(--amber-dark) !important; color: var(--white) !important; }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 5% 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(232,168,56,0.08) 0%, transparent 70%); pointer-events: none; }
+  .hero::after { content: ''; position: absolute; bottom: -150px; left: -150px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(232,168,56,0.05) 0%, transparent 70%); pointer-events: none; }
+  .hero-badge { display: inline-block; background: rgba(232,168,56,0.15); border: 1px solid rgba(232,168,56,0.3); color: var(--amber); font-size: 0.8rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 2rem; animation: fadeUp 0.6s ease both; }
+  .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); color: var(--white); line-height: 1.15; max-width: 700px; margin-bottom: 1.5rem; animation: fadeUp 0.6s ease 0.1s both; }
+  .hero h1 em { font-style: normal; color: var(--amber); }
+  .hero p { font-size: clamp(1rem, 2vw, 1.2rem); color: rgba(255,255,255,0.65); max-width: 520px; line-height: 1.7; margin-bottom: 2.5rem; animation: fadeUp 0.6s ease 0.2s both; }
+  .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.6s ease 0.3s both; }
+  .btn-primary { background: var(--amber); color: var(--navy); padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 20px rgba(232,168,56,0.3); }
+  .btn-primary:hover { background: var(--amber-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,168,56,0.4); }
+  .btn-secondary { background: transparent; color: rgba(255,255,255,0.8); padding: 14px 32px; border-radius: 8px; font-weight: 500; font-size: 1rem; text-decoration: none; border: 1px solid rgba(255,255,255,0.2); transition: all 0.2s; }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
+  .hero-stats { display: flex; gap: 3rem; margin-top: 5rem; animation: fadeUp 0.6s ease 0.4s both; }
+  .stat { text-align: center; }
+  .stat-number { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--amber); }
+  .stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* SERVICES */
+  .services { padding: 100px 5%; background: var(--white); text-align: center; }
+  .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; }
+  .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--navy); margin-bottom: 1rem; }
+  .section-sub { color: var(--gray-500); font-size: 1.05rem; max-width: 500px; margin: 0 auto 4rem; line-height: 1.6; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; max-width: 960px; margin: 0 auto; }
+  .service-card { background: var(--navy); border-radius: 16px; padding: 2rem; text-align: left; transition: transform 0.2s, box-shadow 0.2s; }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(27,42,74,0.15); }
+  .service-icon { width: 48px; height: 48px; margin-bottom: 1.5rem; }
+  .service-icon svg { width: 100%; height: 100%; }
+  .service-card h3 { color: var(--white); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; }
+  .service-card p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.6; }
+
+  /* HOW IT WORKS */
+  .how { padding: 100px 5%; background: var(--gray-100); text-align: center; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; max-width: 860px; margin: 0 auto; }
+  .step { background: var(--white); border-radius: 16px; padding: 2.5rem 2rem; position: relative; }
+  .step-number { width: 48px; height: 48px; background: var(--amber); color: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 1.3rem; font-weight: 700; margin: 0 auto 1.5rem; }
+  .step h3 { font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.75rem; }
+  .step p { color: var(--gray-500); font-size: 0.9rem; line-height: 1.6; }
+
+  /* EXAMPLE CASE */
+  .example { padding: 100px 5%; background: var(--navy); }
+  .example-inner { max-width: 860px; margin: 0 auto; }
+  .example-inner .section-label { color: var(--amber); }
+  .example-inner .section-title { color: var(--white); text-align: center; }
+  .example-inner .section-sub { color: rgba(255,255,255,0.5); text-align: center; }
+  .example-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .example-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; }
+  .example-card .tag { display: inline-block; background: rgba(232,168,56,0.15); color: var(--amber); font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; margin-bottom: 1rem; }
+  .example-card h4 { color: var(--white); font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem; }
+  .example-card p { color: rgba(255,255,255,0.5); font-size: 0.88rem; line-height: 1.65; }
+  .example-steps { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .example-step { display: flex; align-items: flex-start; gap: 0.75rem; color: rgba(255,255,255,0.6); font-size: 0.85rem; line-height: 1.5; }
+  .example-step::before { content: '→'; color: var(--amber); flex-shrink: 0; font-weight: 700; }
+
+  /* TRUST */
+  .trust { padding: 100px 5%; background: var(--white); }
+  .trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; max-width: 960px; margin: 0 auto; align-items: center; }
+  .trust-text h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--navy); margin-bottom: 1.25rem; }
+  .trust-text p { color: var(--gray-500); line-height: 1.7; margin-bottom: 1rem; }
+  .trust-points { display: flex; flex-direction: column; gap: 1.5rem; }
+  .trust-point { display: flex; gap: 1rem; align-items: flex-start; }
+  .trust-point-icon { width: 40px; height: 40px; flex-shrink: 0; background: rgba(232,168,56,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 8px; }
+  .trust-point-icon svg { width: 100%; height: 100%; }
+  .trust-point h4 { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; }
+  .trust-point p { font-size: 0.88rem; color: var(--gray-500); line-height: 1.5; }
+
+  /* CONTACT */
+  .contact { padding: 100px 5%; background: var(--navy); text-align: center; }
+  .contact .section-label { color: var(--amber); }
+  .contact .section-title { color: var(--white); }
+  .contact .section-sub { color: rgba(255,255,255,0.5); }
+  .contact-form { max-width: 560px; margin: 0 auto; text-align: left; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { margin-bottom: 1.25rem; }
+  .form-group label { display: block; font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem; }
+  .form-group input,
+  .form-group select,
+  .form-group textarea { width: 100%; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 12px 16px; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; transition: border-color 0.2s; outline: none; }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--amber); }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+  .form-group select { cursor: pointer; }
+  .form-group select option { background: var(--navy); color: var(--white); }
+  .form-group textarea { resize: vertical; min-height: 130px; }
+  .btn-submit { width: 100%; background: var(--amber); color: var(--navy); border: none; padding: 16px; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 20px rgba(232,168,56,0.3); }
+  .btn-submit:hover { background: var(--amber-dark); transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer { background: #111E35; padding: 2rem 5%; text-align: center; color: rgba(255,255,255,0.3); font-size: 0.85rem; }
+  footer a { color: var(--amber); text-decoration: none; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-stats { gap: 2rem; }
+    .trust-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Teknik<span>lotsen</span></div>
+  <ul class="nav-links">
+    <li><a href="#tjanster">Tjänster</a></li>
+    <li><a href="#hur">Så fungerar det</a></li>
+    <li><a href="#exempel">Exempel</a></li>
+    <li><a href="#trygghet">Trygghet</a></li>
+    <li><a href="#kontakt" class="nav-cta">Boka hjälp</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">Teknisk felsökning online</div>
+  <h1>Slipp verkstaden.<br><em>Vi löser det åt dig.</em></h1>
+  <p>Beskriv ditt problem – vi guidar dig steg för steg till lösningen. Husvagn, 12V-system, smarta hem och mer. Enkelt, tryggt och utan krångel.</p>
+  <div class="hero-buttons">
+    <a href="#kontakt" class="btn-primary">Boka hjälp nu</a>
+    <a href="#hur" class="btn-secondary">Så fungerar det →</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-number">100%</div>
+      <div class="stat-label">Online – ingen verkstad</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">Fast</div>
+      <div class="stat-label">Pris per ärende</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">Snabb</div>
+      <div class="stat-label">Responstid</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="tjanster">
+  <div class="section-label">Tjänster</div>
+  <h2 class="section-title">Vad kan vi hjälpa dig med?</h2>
+  <p class="section-sub">Vi hjälper dig steg för steg – oavsett om du är tekniskt kunnig eller inte.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#E8A838" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="8" width="16" height="10" rx="2"/><rect x="2" y="8" width="5" height="10" rx="1"/>
+          <circle cx="7" cy="18" r="2"/><circle cx="15" cy="18" r="2"/>
+          <polyline points="14,4 12,8 14,8 12,13" stroke="#E8A838"/>
+        </svg>
+      </div>
+      <h3>Husvagnsel</h3>
+      <p>Elektriska fel i husvagnen? Ström som saknas, säkringar som löser ut, kylen som inte fungerar. Vi hjälper dig diagnostisera och lösa problemet på distans.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="18" height="11" rx="2"/>
+          <rect x="20" y="10" width="2" height="5" rx="1" fill="#ffffff" stroke="none"/>
+          <rect x="3" y="8" width="4" height="9" rx="1" fill="#E8A838" stroke="none"/>
+          <rect x="8" y="8" width="3" height="9" fill="#E8A838" stroke="none"/>
+          <rect x="12" y="8" width="3" height="9" fill="#E8A838" stroke="none"/>
+        </svg>
+      </div>
+      <h3>12V & Batteri</h3>
+      <p>Problem med batteri, laddning eller 12V-system? Vi reder ut om det är batteriet, laddaren eller kablagen som krånglar.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12L12 4l9 8"/><rect x="6" y="12" width="12" height="9" rx="1"/>
+          <rect x="10" y="16" width="4" height="5" rx="1"/>
+          <path d="M9 8Q12 5 15 8" stroke="#E8A838" stroke-width="1.8"/>
+          <path d="M11 5Q12 4 13 5" stroke="#E8A838" stroke-width="1.8"/>
+        </svg>
+      </div>
+      <h3>Smarta hem</h3>
+      <p>WiFi, routrar, smarta enheter och automation. Vi guidar dig genom installation och felsökning utan att du behöver vara tekniker.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22" stroke-width="2.5"/>
+          <text x="11" y="15" font-family="sans-serif" font-size="9" font-weight="700" fill="#E8A838" text-anchor="middle">?</text>
+        </svg>
+      </div>
+      <h3>Vet inte vad det är?</h3>
+      <p>Inga tekniska termer behövs. Beskriv felet med egna ord så tar vi reda på vad det beror på och vad du behöver göra.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="hur">
+  <div class="section-label">Så fungerar det</div>
+  <h2 class="section-title">Tre enkla steg</h2>
+  <p class="section-sub">Ingen verkstad. Ingen väntetid. Bara snabb och tydlig hjälp direkt till dig.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-number">1</div>
+      <h3>Beskriv problemet</h3>
+      <p>Fyll i formuläret och berätta enkelt vad som inte fungerar. Berätta också lite om dina kunskaper – om du kan mäta volt eller inte. Inga tekniska termer behövs.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <h3>Vi analyserar & ber om mätningar</h3>
+      <p>Vi tittar på ditt problem och kan be dig mäta spänning eller kolla specifika saker – du får exakt instruktion om hur. Sedan analyserar vi resultatet åt dig.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <h3>Du får svaret</h3>
+      <p>Tydlig diagnos och instruktioner levereras direkt till dig via mail – utan tekniskt krångel eller fackspråk. Du vet exakt vad problemet är och vad du ska göra.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLE CASES -->
+<section class="example" id="exempel">
+  <div class="example-inner">
+    <div class="section-label" style="text-align:center;">Exempel</div>
+    <h2 class="section-title">Så här kan det gå till</h2>
+    <p class="section-sub">Verkliga exempel på hur vi löser problem på distans.</p>
+    <div class="example-cards">
+      <div class="example-card">
+        <span class="tag">Husvagnsel</span>
+        <h4>"Kylen i husvagnen fungerar inte"</h4>
+        <p>Kunden vet inte om det är ett elfel eller om kylen är trasig.</p>
+        <div class="example-steps">
+          <div class="example-step">Vi ber kunden mäta spänning till kylen med en multimeter</div>
+          <div class="example-step">Kunden mäter och rapporterar 12.4V</div>
+          <div class="example-step">Diagnos: strömmen finns – fortsatt felsökning behövs</div>
+        </div>
+      </div>
+      <div class="example-card">
+        <span class="tag">12V & Batteri</span>
+        <h4>"Allt slutar fungera efter en dag"</h4>
+        <p>Lampor och pump slutar fungera när husvagnen stått ett tag.</p>
+        <div class="example-steps">
+          <div class="example-step">Vi ber kunden kolla batterispänning på morgonen</div>
+          <div class="example-step">Kunden rapporterar 11.2V – lågt</div>
+          <div class="example-step">Diagnos: batteriet håller inte laddning, dags att byta</div>
+        </div>
+      </div>
+      <div class="example-card">
+        <span class="tag">Smarta hem</span>
+        <h4>"WiFi-lamporna svarar inte"</h4>
+        <p>Smarta lampor som fungerade förra veckan svarar inte längre.</p>
+        <div class="example-steps">
+          <div class="example-step">Vi frågar om routern startats om nyligen</div>
+          <div class="example-step">Kunden bekräftar att IP-adressen ändrats</div>
+          <div class="example-step">Lösning: statisk IP sätts, allt fungerar igen</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust" id="trygghet">
+  <div class="trust-grid">
+    <div class="trust-text">
+      <h2>Trygg och prisvärd hjälp</h2>
+      <p>Hos Tekniklotsen får du kvalificerad hjälp av experter med lång erfarenhet inom el och teknik. Vi arbetar helt på distans, så du slipper åka till en verkstad.</p>
+      <p>Du betalar bara för hjälpen du behöver – enkelt, tryggt och prisvärt.</p>
+    </div>
+    <div class="trust-points">
+      <div class="trust-point">
+        <div class="trust-point-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E8A838" stroke-width="2" stroke-linecap="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Säker kommunikation</h4>
+          <p>All kommunikation sker via mail. Dina uppgifter behandlas med omsorg och delas aldrig vidare.</p>
+        </div>
+      </div>
+      <div class="trust-point">
+        <div class="trust-point-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E8A838" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Snabb respons</h4>
+          <p>Vi återkommer snabbt – ingen lång väntetid på verkstadsbesök.</p>
+        </div>
+      </div>
+      <div class="trust-point">
+        <div class="trust-point-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E8A838" stroke-width="2" stroke-linecap="round">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div>
+          <h4>Fast pris per ärende</h4>
+          <p>Inga dolda avgifter. Du vet vad det kostar innan vi börjar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="kontakt">
+  <div class="section-label">Kontakt</div>
+  <h2 class="section-title">Boka hjälp nu</h2>
+  <p class="section-sub">Fyll i formuläret så återkommer vi inom kort.</p>
+
+  <form class="contact-form" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="kontaktFormular">
+    <input type="hidden" name="form-name" value="kontakt">
+    <p style="display:none;"><label>Fyll inte i detta: <input name="bot-field"></label></p>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="namn">Namn</label>
+        <input type="text" id="namn" name="namn" placeholder="Ditt namn" required>
+      </div>
+      <div class="form-group">
+        <label for="epost">E-post</label>
+        <input type="email" id="epost" name="epost" placeholder="din@epost.se" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="telefon">Telefon (valfritt)</label>
+      <input type="tel" id="telefon" name="telefon" placeholder="070-000 00 00">
+    </div>
+    <div class="form-group">
+      <label for="kunskaper">Dina tekniska kunskaper</label>
+      <select id="kunskaper" name="kunskaper" required>
+        <option value="">Välj nivå...</option>
+        <option value="Nybörjare – kan följa instruktioner">Nybörjare – kan följa instruktioner</option>
+        <option value="Mellannivå – kan mäta volt och kolla säkringar">Mellannivå – kan mäta volt och kolla säkringar</option>
+        <option value="Tekniskt kunnig – van vid el och felsökning">Tekniskt kunnig – van vid el och felsökning</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="arende">Vad gäller ärendet?</label>
+      <select id="arende" name="arende" required>
+        <option value="">Välj kategori...</option>
+        <option value="Husvagnsel">Husvagnsel</option>
+        <option value="12V & Batteri">12V &amp; Batteri</option>
+        <option value="Smarta hem">Smarta hem</option>
+        <option value="Felsökning / Vet ej">Felsökning / Vet ej</option>
+        <option value="Annat">Annat</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="meddelande">Beskriv problemet</label>
+      <textarea id="meddelande" name="meddelande" placeholder="Berätta enkelt vad som inte fungerar – ju mer detaljer desto bättre. T.ex: 'Kylen i husvagnen slutade fungera igår. Lamporna fungerar men kylen är helt död.'" required></textarea>
+    </div>
+    <button type="submit" class="btn-submit">Skicka – vi återkommer!</button>
+  </form>
+
+  <div id="tack-meddelande" style="display:none; max-width:560px; margin:2rem auto 0; background:rgba(255,255,255,0.07); border:1px solid rgba(232,168,56,0.4); border-radius:12px; padding:2rem; text-align:center;">
+    <div style="font-size:2.5rem; margin-bottom:1rem;">✅</div>
+    <h3 style="color:#E8A838; margin-bottom:0.5rem;">Tack för ditt meddelande!</h3>
+    <p style="color:rgba(255,255,255,0.7);">Vi återkommer till dig så snart vi kan.</p>
+  </div>
+
+  <script>
+    const form = document.getElementById('kontaktFormular');
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      try {
+        await fetch("/", { method: "POST", headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: new URLSearchParams(data).toString() });
+        form.style.display = 'none';
+        document.getElementById('tack-meddelande').style.display = 'block';
+      } catch(err) {
+        alert('Något gick fel. Försök igen eller maila oss direkt på info@tekniklots.se');
+      }
+    });
+  </script>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Tekniklotsen · <a href="mailto:info@tekniklots.se">info@tekniklots.se</a> · Teknisk felsökning online för hela Sverige</p>
+</footer>
+
+</body>
+</html>
