@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Betala via Swish – Tekniklotsen</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231B2A4A'/><text y='.9em' font-size='70' x='50%' dominant-baseline='auto' text-anchor='middle' fill='%23E8A838'>T</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --amber: #E8A838;
+    --amber-dark: #C98E20;
+    --white: #FFFFFF;
+    --gray-500: #8A93A8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 5%;
+  }
+
+  .logo { font-family: 'DM Serif Display', serif; color: var(--white); font-size: 1.3rem; letter-spacing: 0.5px; margin-bottom: 2rem; }
+  .logo span { color: var(--amber); }
+
+  .card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    max-width: 440px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .card-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: 0.75rem; }
+  .card-title { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--white); margin-bottom: 0.5rem; }
+  .card-desc { color: rgba(255,255,255,0.5); font-size: 0.9rem; line-height: 1.6; margin-bottom: 2rem; }
+
+  .amount-box {
+    background: rgba(232,168,56,0.1);
+    border: 1px solid rgba(232,168,56,0.25);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .amount-label { color: rgba(255,255,255,0.45); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem; }
+  .amount-value { font-family: 'DM Serif Display', serif; font-size: 3rem; color: var(--amber); line-height: 1; }
+  .amount-arende { color: rgba(255,255,255,0.4); font-size: 0.82rem; margin-top: 0.4rem; }
+
+  .qr-wrap {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 1rem;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  }
+  .qr-wrap img { display: block; width: 200px; height: 200px; }
+
+  .swish-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 0.875rem 1.25rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    user-select: none;
+  }
+  .swish-row:hover { border-color: var(--amber); }
+  .swish-label { color: rgba(255,255,255,0.45); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+  .swish-number { font-size: 1.25rem; font-weight: 600; letter-spacing: 1.5px; color: var(--white); }
+  .copy-btn { background: rgba(232,168,56,0.15); color: var(--amber); border: none; border-radius: 6px; padding: 5px 12px; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+  .copy-btn:hover { background: rgba(232,168,56,0.25); }
+
+  .steps { text-align: left; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .step { display: flex; gap: 0.75rem; align-items: flex-start; color: rgba(255,255,255,0.6); font-size: 0.88rem; line-height: 1.5; }
+  .step-num { background: var(--amber); color: var(--navy); min-width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  .btn-paid {
+    display: block;
+    background: var(--amber);
+    color: var(--navy);
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.2s;
+    box-shadow: 0 4px 20px rgba(232,168,56,0.3);
+  }
+  .btn-paid:hover { background: var(--amber-dark); }
+
+  footer { margin-top: 2rem; color: rgba(255,255,255,0.25); font-size: 0.82rem; }
+  footer a { color: var(--amber); text-decoration: none; }
+
+  .toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--amber);
+    color: var(--navy);
+    padding: 0.6rem 1.5rem;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+
+<div class="logo">Teknik<span>lotsen</span></div>
+
+<div class="card">
+  <div class="card-label">Betalning</div>
+  <h1 class="card-title" id="cardTitle">Betala via Swish</h1>
+  <p class="card-desc" id="cardDesc">Skanna QR-koden eller ange numret manuellt i Swish-appen.</p>
+
+  <div class="amount-box">
+    <div class="amount-label">Att betala</div>
+    <div class="amount-value" id="amountDisplay">–</div>
+    <div class="amount-arende" id="arendeDisplay"></div>
+  </div>
+
+  <div class="qr-wrap">
+    <img id="qrCode" src="" alt="Swish QR-kod" width="200" height="200">
+  </div>
+
+  <div class="swish-row" onclick="copyNumber()">
+    <div>
+      <div class="swish-label">Swish-nummer</div>
+      <div class="swish-number">076-632 71 15</div>
+    </div>
+    <button class="copy-btn" onclick="event.stopPropagation(); copyNumber()">Kopiera</button>
+  </div>
+
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><span>Öppna <strong style="color:var(--white)">Swish</strong> på din telefon</span></div>
+    <div class="step"><div class="step-num">2</div><span>Skanna QR-koden eller ange numret <strong style="color:var(--white)">076-632 71 15</strong></span></div>
+    <div class="step"><div class="step-num">3</div><span>Kontrollera belopp och bekräfta betalningen</span></div>
+    <div class="step"><div class="step-num">4</div><span>Klicka på knappen nedan så levererar vi lösningen!</span></div>
+  </div>
+
+  <a href="#" class="btn-paid" id="paidBtn">✓ Jag har betalat!</a>
+</div>
+
+<footer>
+  <p>Frågor? <a href="mailto:info@tekniklots.se">info@tekniklots.se</a></p>
+</footer>
+
+<div class="toast" id="toast">Kopierat! ✓</div>
+
+<script>
+  const SWISH = '0766327115';
+
+  function p(key) {
+    return new URLSearchParams(window.location.search).get(key) || '';
+  }
+
+  function buildQR(amount, arende) {
+    const msg = (arende ? 'Tekniklotsen – ' + arende : 'Tekniklotsen').substring(0, 50);
+    const data = JSON.stringify({
+      version: 1,
+      payee: { value: SWISH, editable: false },
+      amount: { value: parseInt(amount) || 0, editable: !amount },
+      message: { value: msg, editable: false }
+    });
+    return 'https://api.qrserver.com/v1/create-qr-code/?data='
+      + encodeURIComponent('swish://payment?data=' + encodeURIComponent(data))
+      + '&size=200x200&margin=8';
+  }
+
+  function copyNumber() {
+    navigator.clipboard.writeText(SWISH).then(() => {
+      const t = document.getElementById('toast');
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2000);
+    });
+  }
+
+  // Init från URL-parametrar
+  const pris   = p('pris');
+  const arende = p('arende');
+  const namn   = p('namn');
+
+  document.getElementById('qrCode').src = buildQR(pris, arende);
+
+  if (pris) {
+    document.getElementById('amountDisplay').textContent = pris + ' kr';
+  } else {
+    document.getElementById('amountDisplay').textContent = 'Se mail';
+    document.getElementById('cardDesc').textContent = 'Ange det belopp du fått i mailet från Tekniklotsen.';
+  }
+
+  if (arende) {
+    document.getElementById('arendeDisplay').textContent = arende;
+    document.getElementById('cardTitle').textContent = 'Betala – ' + arende;
+  }
+
+  // Bygg mailto-länk för "Jag har betalat"
+  const subject = encodeURIComponent('Betalning genomförd' + (arende ? ' – ' + arende : ''));
+  const body = encodeURIComponent(
+    'Hej!\n\nJag har nu betalat' +
+    (pris ? ' ' + pris + ' kr' : '') +
+    ' via Swish' +
+    (arende ? ' för ' + arende : '') +
+    (namn ? '.\n\nNamn: ' + namn : '') +
+    '.\n\nMvh'
+  );
+  document.getElementById('paidBtn').href = 'mailto:info@tekniklots.se?subject=' + subject + '&body=' + body;
+</script>
+</body>
+</html>
