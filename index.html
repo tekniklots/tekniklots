@@ -507,7 +507,7 @@
     <div class="express-icon">⚡</div>
     <div class="express-content">
       <h3>Expresshjälp – svar inom 2 timmar</h3>
-      <p>Lägg till expresshjälp på ditt ärende och få svar inom 2 timmar under kontorstid (mån–fre 08–18). Perfekt när du sitter fast på campingen eller behöver lösa det direkt.</p>
+      <p>Lägg till expresshjälp på ditt ärende och få svar inom 2 timmar – alla dagar 07–22. Perfekt när du sitter fast på campingen eller behöver lösa det direkt.</p>
     </div>
     <div class="express-price-tag">+299 kr</div>
   </div>
@@ -567,7 +567,7 @@
         <input type="checkbox" name="express" id="expressCheck" value="Ja">
         ⚡ Lägg till Expresshjälp (+299 kr) – svar inom 2 timmar
       </label>
-      <div class="express-check-desc">Svar inom 2 timmar under kontorstid (mån–fre 08–18)</div>
+      <div class="express-check-desc">Svar inom 2 timmar – alla dagar 07–22</div>
       <div class="express-active-info" id="expressActiveInfo">✓ Expresshjälp aktiverat – ditt ärende behandlas med högsta prioritet!</div>
     </div>
     <button type="submit" class="btn-submit" id="submitBtn">Skicka – vi återkommer!</button>
@@ -605,7 +605,7 @@
         const tack = document.getElementById('tack-meddelande');
         if (isExpress) {
           tack.querySelector('h3').textContent = '⚡ Expresshjälp bokad!';
-          tack.querySelector('p').textContent = 'Tack! Vi återkommer till dig inom 2 timmar under kontorstid (mån–fre 08–18).';
+          tack.querySelector('p').textContent = 'Tack! Vi återkommer till dig inom 2 timmar (alla dagar 07–22).';
         }
         tack.style.display = 'block';
       } catch(err) {
