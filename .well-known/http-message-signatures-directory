@@ -1,0 +1,10 @@
+{
+  "keys": [
+    {
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "kid": "tekniklots-2026-1",
+      "x": "DEqX5oedxCn9y4QN4-4Folz92B27NEvPu095AnuhHbQ"
+    }
+  ]
+}

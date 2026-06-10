@@ -9,6 +9,10 @@
 /sitemap.xml
   Content-Type: application/xml; charset=UTF-8
 
+/.well-known/http-message-signatures-directory
+  Content-Type: application/http-message-signatures-directory+json; charset=UTF-8
+  Access-Control-Allow-Origin: *
+
 /.well-known/api-catalog
   Content-Type: application/linkset+json; charset=UTF-8
   Access-Control-Allow-Origin: *
