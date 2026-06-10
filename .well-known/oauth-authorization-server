@@ -3,10 +3,20 @@
   "agent_auth": {
     "skill": "https://tekniklots.se/.well-known/agent-skills/submit-support-request/SKILL.md",
     "register_uri": "https://tekniklots.se/#kontakt",
-    "identity_types_supported": ["anonymous"],
+    "identity_types_supported": ["anonymous", "identity_assertion"],
     "anonymous": {
       "credential_types_supported": ["none"],
       "claim_uri": "https://tekniklots.se/#kontakt"
-    }
+    },
+    "identity_assertion": {
+      "assertion_types_supported": [
+        "urn:ietf:params:oauth:token-type:id-jag",
+        "verified_email"
+      ],
+      "credential_types_supported": ["email"],
+      "claim_uri": "https://tekniklots.se/#kontakt"
+    },
+    "revocation_uri": "mailto:info@tekniklots.se",
+    "events_supported": ["revocation"]
   }
 }
