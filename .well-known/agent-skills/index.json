@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agentskills.io/schema/v0.2.0/index.json",
+  "skills": [
+    {
+      "name": "submit-technical-support-request",
+      "type": "action",
+      "description": "Submit a technical support request for RV electrical systems, 12V batteries, or smart home troubleshooting to Tekniklotsen",
+      "url": "https://tekniklots.se/.well-known/agent-skills/submit-support-request/SKILL.md",
+      "sha256": "bc8991ad2dd6571451c636e771e5854559b8a43457d0f08c7458e1b0fc94d0a1"
+    }
+  ]
+}

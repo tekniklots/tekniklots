@@ -1,0 +1,60 @@
+{
+  "serverInfo": {
+    "name": "Tekniklotsen",
+    "version": "1.0.0",
+    "description": "Online technical support service for RV electrical systems, 12V batteries, and smart home troubleshooting. Based in Sweden."
+  },
+  "transport": {
+    "type": "http",
+    "endpoint": "https://tekniklots.se/"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": false,
+    "prompts": false
+  },
+  "tools": [
+    {
+      "name": "submit_support_request",
+      "description": "Submit a technical support request for RV electrical, 12V battery, or smart home issues",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "description": "Customer name" },
+          "email": { "type": "string", "description": "Customer email address" },
+          "issue_category": {
+            "type": "string",
+            "enum": ["Husvagnsel", "12V & Batteri", "Smarta hem", "Felsökning / Vet ej", "Annat"],
+            "description": "Category of the technical issue"
+          },
+          "description": { "type": "string", "description": "Detailed description of the problem" },
+          "skill_level": {
+            "type": "string",
+            "enum": ["Nybörjare", "Mellannivå", "Tekniskt kunnig"],
+            "description": "Customer's technical skill level"
+          },
+          "express": {
+            "type": "boolean",
+            "description": "Add express service (+299 SEK) for response within 2 hours (daily 07:00-22:00)"
+          }
+        },
+        "required": ["name", "email", "issue_category", "description"]
+      }
+    }
+  ],
+  "pricing": {
+    "currency": "SEK",
+    "plans": [
+      { "name": "Snabbhjälp", "price": 399, "description": "Basic remote troubleshooting, response by email" },
+      { "name": "Felsökning", "price": 699, "description": "Thorough diagnosis with measurements, up to 5 follow-up emails" },
+      { "name": "Avancerad utredning", "price": 999, "description": "Complex multi-step diagnosis, unlimited email, documented report" }
+    ],
+    "addons": [
+      { "name": "Express", "price": 299, "description": "Response within 2 hours, daily 07:00-22:00" }
+    ]
+  },
+  "contact": {
+    "email": "info@tekniklots.se",
+    "url": "https://tekniklots.se/"
+  }
+}

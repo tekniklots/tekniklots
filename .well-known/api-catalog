@@ -1,0 +1,23 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://tekniklots.se/",
+      "service-doc": [
+        {
+          "href": "https://tekniklots.se/",
+          "type": "text/html"
+        }
+      ],
+      "service-desc": [
+        {
+          "href": "https://tekniklots.se/.well-known/mcp/server-card.json",
+          "type": "application/json"
+        },
+        {
+          "href": "https://tekniklots.se/.well-known/agent-skills/index.json",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}

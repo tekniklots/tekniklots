@@ -620,5 +620,73 @@
   <p>© 2026 Tekniklotsen · <a href="mailto:info@tekniklots.se">info@tekniklots.se</a> · Teknisk felsökning online för hela Sverige</p>
 </footer>
 
+<script>
+  if (typeof navigator !== 'undefined' && navigator.modelContext?.provideContext) {
+    navigator.modelContext.provideContext({
+      tools: [
+        {
+          name: 'get_service_info',
+          description: 'Get information about Tekniklotsen technical support services, pricing, and how to submit a request',
+          inputSchema: { type: 'object', properties: {} },
+          execute: async () => ({
+            name: 'Tekniklotsen',
+            description: 'Online technical support for RV electrical, 12V systems, and smart home troubleshooting',
+            services: ['Husvagnsel', '12V & Batteri', 'Smarta hem', 'Felsökning'],
+            pricing_sek: { snabbhjalp: 399, felsökning: 699, avancerad_utredning: 999, express_addon: 299 },
+            contact: 'info@tekniklots.se',
+            submit_url: 'https://tekniklots.se/#kontakt'
+          })
+        },
+        {
+          name: 'fill_support_form',
+          description: 'Pre-fill the support request form with customer information so the user only needs to review and submit',
+          inputSchema: {
+            type: 'object',
+            properties: {
+              name: { type: 'string', description: 'Customer name' },
+              email: { type: 'string', description: 'Customer email' },
+              issue_category: {
+                type: 'string',
+                enum: ['Husvagnsel', '12V & Batteri', 'Smarta hem', 'Felsökning / Vet ej', 'Annat']
+              },
+              description: { type: 'string', description: 'Problem description' },
+              skill_level: {
+                type: 'string',
+                enum: [
+                  'Nybörjare – kan följa instruktioner',
+                  'Mellannivå – kan mäta volt och kolla säkringar',
+                  'Tekniskt kunnig – van vid el och felsökning'
+                ]
+              },
+              express: { type: 'boolean', description: 'Add express service (+299 SEK, response within 2 hours)' }
+            },
+            required: ['name', 'email', 'description']
+          },
+          execute: async (params) => {
+            document.querySelector('#kontakt').scrollIntoView({ behavior: 'smooth' });
+            const set = (id, val) => { const el = document.getElementById(id); if (el && val != null) el.value = val; };
+            set('namn', params.name);
+            set('epost', params.email);
+            set('meddelande', params.description);
+            if (params.issue_category) {
+              const sel = document.getElementById('arende');
+              for (const opt of sel.options) if (opt.value === params.issue_category) { opt.selected = true; break; }
+            }
+            if (params.skill_level) {
+              const sel = document.getElementById('kunskaper');
+              for (const opt of sel.options) if (opt.value === params.skill_level) { opt.selected = true; break; }
+            }
+            if (params.express) {
+              const cb = document.getElementById('expressCheck');
+              if (cb && !cb.checked) { cb.checked = true; cb.dispatchEvent(new Event('change')); }
+            }
+            return { success: true, message: 'Form filled. Please review and submit.' };
+          }
+        }
+      ]
+    });
+  }
+</script>
+
 </body>
 </html>
