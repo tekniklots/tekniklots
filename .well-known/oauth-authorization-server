@@ -1,0 +1,12 @@
+{
+  "issuer": "https://tekniklots.se",
+  "agent_auth": {
+    "skill": "https://tekniklots.se/.well-known/agent-skills/submit-support-request/SKILL.md",
+    "register_uri": "https://tekniklots.se/#kontakt",
+    "identity_types_supported": ["anonymous"],
+    "anonymous": {
+      "credential_types_supported": ["none"],
+      "claim_uri": "https://tekniklots.se/#kontakt"
+    }
+  }
+}

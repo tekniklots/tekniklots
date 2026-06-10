@@ -1,0 +1,6 @@
+{
+  "resource": "https://tekniklots.se/",
+  "authorization_servers": ["https://tekniklots.se"],
+  "scopes_supported": ["support:submit", "support:express"],
+  "bearer_methods_supported": ["header"]
+}

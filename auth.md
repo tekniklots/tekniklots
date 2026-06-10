@@ -1,4 +1,6 @@
-# Tekniklotsen – Agent Authentication & Registration
+# auth.md
+
+## Tekniklotsen – Agent Authentication & Registration
 
 ## Service Overview
 
