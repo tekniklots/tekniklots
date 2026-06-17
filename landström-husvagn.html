@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landström Husvagn – Inkoppling, Fel & Guide | Tekniklotsen</title>
+<meta name="description" content="Landström till husvagn – hur du kopplar in, vad som kan gå fel och hur du felsöker. Expert hjälper dig med CEE-kontakt, jordfelsbrytare och 230V-system.">
+<meta name="keywords" content="landström husvagn, koppla in landström husvagn, CEE kontakt husvagn, jordfelsbrytare husvagn, 230V husvagn problem, landströmsladdare husvagn">
+<link rel="canonical" href="https://tekniklots.se/landström-husvagn">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231B2A4A'/><text y='.9em' font-size='70' x='50%' dominant-baseline='auto' text-anchor='middle' fill='%23E8A838'>T</text></svg>">
+<meta property="og:title" content="Landström Husvagn – Inkoppling, Fel & Guide | Tekniklotsen">
+<meta property="og:description" content="Landström till husvagn – inkoppling, felsökning av jordfelsbrytare, CEE-kontakt och 230V-system.">
+<meta property="og:url" content="https://tekniklots.se/landström-husvagn">
+<meta property="og:type" content="article"><meta property="og:locale" content="sv_SE"><meta property="og:site_name" content="Tekniklotsen">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Landström i Husvagn – Inkoppling, Felsökning och Säkerhet","url":"https://tekniklots.se/landström-husvagn","publisher":{"@type":"Organization","name":"Tekniklotsen","url":"https://tekniklots.se"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1B2A4A;--amber:#E8A838;--amber-dark:#C98E20;--white:#FFFFFF;--gray-100:#F5F6F8;--gray-500:#8A93A8}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--white);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px;box-shadow:0 2px 20px rgba(0,0,0,.2)}
+.logo{font-family:'DM Serif Display',serif;color:var(--white);font-size:1.3rem;text-decoration:none}.logo span{color:var(--amber)}
+.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{color:rgba(255,255,255,.75);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}.nav-links a:hover{color:var(--amber)}
+.nav-cta{background:var(--amber);color:var(--navy)!important;padding:8px 20px;border-radius:6px;font-weight:600!important}
+.page-hero{background:var(--navy);padding:120px 5% 60px;text-align:center}
+.page-hero .badge{display:inline-block;background:rgba(232,168,56,.15);border:1px solid rgba(232,168,56,.3);color:var(--amber);font-size:.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:1.5rem}
+.page-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,5vw,3.5rem);color:var(--white);line-height:1.15;max-width:700px;margin:0 auto 1rem}
+.page-hero h1 em{font-style:normal;color:var(--amber)}
+.page-hero p{color:rgba(255,255,255,.65);font-size:1.1rem;max-width:580px;margin:0 auto;line-height:1.7}
+.breadcrumb{background:#EEF1F7;padding:.75rem 5%;font-size:.85rem;color:var(--gray-500)}.breadcrumb a{color:var(--amber);text-decoration:none}
+article{max-width:800px;margin:0 auto;padding:60px 5%}
+article h2{font-family:'DM Serif Display',serif;font-size:clamp(1.5rem,3vw,2rem);color:var(--navy);margin:2.5rem 0 1rem}
+article h3{font-size:1.1rem;font-weight:600;color:var(--navy);margin:2rem 0 .75rem}
+article p{color:#4a5568;line-height:1.8;margin-bottom:1rem}
+article ul,article ol{color:#4a5568;line-height:1.8;margin-bottom:1rem;padding-left:1.5rem}
+article li{margin-bottom:.4rem}article strong{color:var(--navy)}
+.warning-box{background:#fff5f5;border-left:4px solid #e53e3e;border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:1.5rem 0}
+.warning-box p{margin:0;font-size:.95rem;color:#742a2a}
+.info-box{background:var(--gray-100);border-left:4px solid var(--amber);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:1.5rem 0}
+.info-box p{margin:0;font-size:.95rem}
+.cta-section{background:var(--navy);padding:60px 5%;text-align:center}
+.cta-section h2{font-family:'DM Serif Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);color:var(--white);margin-bottom:1rem}
+.cta-section p{color:rgba(255,255,255,.65);margin-bottom:2rem;font-size:1rem;max-width:500px;margin-left:auto;margin-right:auto}
+.btn-primary{background:var(--amber);color:var(--navy);padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block;transition:all .2s;box-shadow:0 4px 20px rgba(232,168,56,.3)}
+.btn-primary:hover{background:var(--amber-dark);transform:translateY(-2px)}
+.related{background:var(--gray-100);padding:40px 5%}
+.related h3{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:1rem;max-width:800px;margin-left:auto;margin-right:auto}
+.related-links{display:flex;flex-wrap:wrap;gap:.75rem;max-width:800px;margin:0 auto}
+.related-links a{background:var(--white);border:1px solid #e2e8f0;color:var(--navy);padding:.5rem 1rem;border-radius:6px;text-decoration:none;font-size:.9rem;transition:border-color .2s}.related-links a:hover{border-color:var(--amber);color:var(--amber)}
+footer{background:#111E35;padding:2rem 5%;text-align:center;color:rgba(255,255,255,.3);font-size:.85rem}footer a{color:var(--amber);text-decoration:none}
+@media(max-width:768px){.nav-links{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo">Teknik<span>lotsen</span></a>
+  <ul class="nav-links">
+    <li><a href="/#tjanster">Tjänster</a></li>
+    <li><a href="/#hur">Så fungerar det</a></li>
+    <li><a href="/#priser">Priser</a></li>
+    <li><a href="/#kontakt" class="nav-cta">Boka hjälp</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="badge">230V & Landström</div>
+  <h1>Landström i Husvagn<br><em>Inkoppling & felsökning</em></h1>
+  <p>Allt om landström i husvagnen – från korrekt inkoppling till felsökning av jordfelsbrytare och CEE-kontakt.</p>
+</div>
+
+<div class="breadcrumb"><a href="/">Tekniklotsen</a> › Landström husvagn</div>
+
+<article>
+  <h2>Hur Kopplar du in Landström?</h2>
+
+  <h3>Utrustning du behöver</h3>
+  <ul>
+    <li><strong>CEE-kabel (blå 230V):</strong> Standardkabel för husvagnar, 16A. Längd 10–25 meter</li>
+    <li><strong>CEE-adapter:</strong> Om campingplatsen har annan kontakttyp (Schuko, CEE 32A)</li>
+    <li><strong>Förlängningskabel:</strong> Alltid CEE-godkänd – aldrig vanliga hushållsförlängningskablar</li>
+  </ul>
+
+  <h3>Steg-för-steg</h3>
+  <ol>
+    <li>Kontrollera att jordfelsbrytaren (RCD) i husvagnen är i läge PÅ</li>
+    <li>Anslut kabeln till husvagnens intag</li>
+    <li>Anslut kabeln till campingplatsens elstolpe</li>
+    <li>Kontrollera att lampan på elstolpen tänds</li>
+    <li>Mät gärna spänningen – ska vara 220–240V</li>
+  </ol>
+
+  <div class="warning-box">
+    <p><strong>Glöm inte:</strong> Koppla alltid bort landström innan du kör. Glömmer du kabeln förstörs kontakten.</p>
+  </div>
+
+  <h2>Vanliga Problem med Landström</h2>
+
+  <h3>Jordfelsbrytaren löser ut direkt</h3>
+  <p>Om jordfelsbrytaren (RCD) löser ut omedelbart är det tecken på ett jordfelsfel. Vanliga orsaker:</p>
+  <ul>
+    <li>Vatten i ett 230V-uttag inuti husvagnen</li>
+    <li>Skadad kabel med isolationsfel</li>
+    <li>Defekt apparat (varmvattenberedare, luftkonditionering)</li>
+  </ul>
+  <p><strong>Åtgärd:</strong> Koppla bort alla apparater och prova igen. Anslut en apparat i taget tills du hittar den som utlöser felet.</p>
+
+  <h3>Ingen ström trots inkopplad landström</h3>
+  <ul>
+    <li>Kontrollera campingplatsens elstolpe – kan vara ur drift</li>
+    <li>Kontrollera om CEE-kontakten sitter i ordentligt (ska klicka fast)</li>
+    <li>Kontrollera 230V-säkringen i husvagnens säkringsdosa</li>
+    <li>Kontrollera om jordfelsbrytaren löst ut tyst – återställ med knappen</li>
+  </ul>
+
+  <h3>Batteriet laddas inte trots landström</h3>
+  <p>Landströmsladdaren ska automatiskt ladda 12V-batteriet. Om det inte sker:</p>
+  <ul>
+    <li>Kontrollera att laddaren har ström (kontrollera säkringen)</li>
+    <li>Mät spänning på batteriet efter 30 min inkoppling – ska öka mot 14V</li>
+    <li>Äldre laddare kan ha fel laddningsprofil för moderna batterier</li>
+  </ul>
+
+  <h2>Säkerhet vid Landström</h2>
+  <ul>
+    <li><strong>Jordfelsbrytaren är livsviktig</strong> – testa med testknappen en gång per säsong</li>
+    <li>Rulla alltid ut hela kabeln ur kabeltrumman – ihopvikt kabel hettar upp och kan fatta eld</li>
+    <li>Kontrollera att inga kablar är klämda under husvagnens ben eller hjul</li>
+    <li>Kontrollera CEE-kontakten varje säsong för tecken på korrosion eller brännskador</li>
+  </ul>
+
+  <h2>Landströmsladdare med Litiumbatteri</h2>
+  <p>Äldre husvagnar (före 2010) har ofta laddare som inte är kompatibla med litiumbatterier. Om du uppgraderat till litium behöver du en modern <strong>multi-stage laddare</strong> med LiFePO4-profil.</p>
+
+  <div class="info-box">
+    <p><strong>Tips:</strong> Moderna kombinerade landströmsladdare (ex. Victron BlueSmart) kan hantera landström, solcellsladdning och har inbyggt Bluetooth för realtidsövervakning.</p>
+  </div>
+</article>
+
+<section class="cta-section">
+  <h2>Problem med landströmssystemet?</h2>
+  <p>Vi guidar dig steg för steg – beskriv problemet med bilder och vi hjälper dig hitta och lösa felet.</p>
+  <a href="/#kontakt" class="btn-primary">Boka hjälp nu – från 399 kr</a>
+</section>
+
+<div class="related">
+  <h3>Relaterade guider</h3>
+  <div class="related-links">
+    <a href="/felsökning-el-husvagn">Felsökning el husvagn</a>
+    <a href="/batteri-laddning-husvagn">Batteri & laddning</a>
+    <a href="/litiumbatteri-husvagn">Litiumbatteri guide</a>
+    <a href="/solceller-husvagn">Solceller guide</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Tekniklotsen · <a href="mailto:info@tekniklots.se">info@tekniklots.se</a> · Teknisk felsökning online för hela Sverige</p>
+</footer>
+</body>
+</html>
